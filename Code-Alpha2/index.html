@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <form autocomplete="off" onsubmit="onFormSubmit()">
+                        <div>
+                            <label for="productCode">ProductCode</label>
+                            <input type="text" name="productCode" id="productCode">
+                        </div>
+                        <div>
+                            <label for="product">ProductName</label>
+                            <input type="text" name="product" id="product">
+                        </div>
+                        <div>
+                            <label for="qty">Phone number</label>
+                            <input type="number" name="qty" id="qty">
+                        </div>
+                        <div>
+                            <label for="perPrice">Roll number</label>
+                            <input type="number" name="perPrice" id="perPrice">
+                        </div>
+    
+                        <div class="form_action--button">
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
+                        </div>
+                    </form>
+    
+                    <td>
+                        <table class="list" id="storeList">
+                            <thead>
+                                <tr>
+                                    <th>Product Code</th>
+                                    <th>Product Name</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                            </tbody>
+                        </table>
+                    </td>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
