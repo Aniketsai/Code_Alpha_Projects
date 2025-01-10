@@ -1,0 +1,121 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Captcha Container */
+  .capt {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 320px;
+  }
+  
+  /* Header */
+  .capt h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Captcha Display */
+  #mainCaptcha {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  /* Input Fields */
+  input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"]:focus {
+    border-color: #4caf50;
+  }
+  
+  /* Button Styles */
+  input[type="button"],
+  input[type="checkbox"] + label {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Checkbox Button */
+  input[type="checkbox"] {
+    display: none; /* Hide default checkbox */
+  }
+  
+  input[type="checkbox"] + label {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  
+  input[type="checkbox"]:checked + label {
+    background-color: #45a049; /* Color change when checked */
+  }
+  
+  input[type="checkbox"] + label:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Button Hover Effect */
+  input[type="button"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 400px) {
+    .capt {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    #mainCaptcha {
+      font-size: 20px;
+      padding: 8px;
+    }
+  
+    input[type="text"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    input[type="button"],
+    input[type="checkbox"] + label {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  

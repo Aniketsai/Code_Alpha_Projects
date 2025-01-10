@@ -1,1 +1,2 @@
-# CodeAlpha_project_Task2
+# CodeAlpha_project_Task1
+Project Name: Random cpatcha generator 

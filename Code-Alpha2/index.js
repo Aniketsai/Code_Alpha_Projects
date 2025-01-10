@@ -1,74 +1,69 @@
+var selectedRow = null;
 
-var selectedRow = null
-
-function onFormSubmit(e) {
-	event.preventDefault();
-        var formData = readFormData();
-        if (selectedRow == null){
-            insertNewRecord(formData);
-		}
-        else{
-            updateRecord(formData);
-		}
-        resetForm();    
+function onFormSubmit(event) {
+    event.preventDefault();
+    var formData = readFormData();
+    if (selectedRow === null) {
+        insertNewRecord(formData);
+    } else {
+        updateRecord(formData);
+    }
+    resetForm();
 }
 
-//Retrieve the data
+// Retrieve the form data
 function readFormData() {
     var formData = {};
-    formData["productCode"] = document.getElementById("productCode").value;
-    formData["product"] = document.getElementById("product").value;
-    formData["qty"] = document.getElementById("qty").value;
-    formData["perPrice"] = document.getElementById("perPrice").value;
+    formData["employeeId"] = document.getElementById("employeeId").value;
+    formData["employeeName"] = document.getElementById("employeeName").value;
+    formData["employeeEmail"] = document.getElementById("employeeEmail").value;
+    formData["employeeMobile"] = document.getElementById("employeeMobile").value;
     return formData;
 }
 
-//Insert the data
+// Insert a new record into the table
 function insertNewRecord(data) {
-    var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
+    var table = document.getElementById("employeeList").getElementsByTagName('tbody')[0];
     var newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
-		cell1.innerHTML = data.productCode;
-    cell2 = newRow.insertCell(1);
-		cell2.innerHTML = data.product;
-    cell3 = newRow.insertCell(2);
-		cell3.innerHTML = data.qty;
-    cell4 = newRow.insertCell(3);
-		cell4.innerHTML = data.perPrice;
-    cell4 = newRow.insertCell(4);
-        cell4.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
+    newRow.insertCell(0).innerHTML = data.employeeId;
+    newRow.insertCell(1).innerHTML = data.employeeName;
+    newRow.insertCell(2).innerHTML = data.employeeEmail;
+    newRow.insertCell(3).innerHTML = data.employeeMobile;
+    var actionCell = newRow.insertCell(4);
+    actionCell.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
 }
 
-//Edit the data
+// Edit the record
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
-    document.getElementById("productCode").value = selectedRow.cells[0].innerHTML;
-    document.getElementById("product").value = selectedRow.cells[1].innerHTML;
-    document.getElementById("qty").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("perPrice").value = selectedRow.cells[3].innerHTML;
-}
-function updateRecord(formData) {
-    selectedRow.cells[0].innerHTML = formData.productCode;
-    selectedRow.cells[1].innerHTML = formData.product;
-    selectedRow.cells[2].innerHTML = formData.qty;
-    selectedRow.cells[3].innerHTML = formData.perPrice;
+    document.getElementById("employeeId").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("employeeName").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("employeeEmail").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("employeeMobile").value = selectedRow.cells[3].innerHTML;
 }
 
-//Delete the data
+// Update the record
+function updateRecord(formData) {
+    selectedRow.cells[0].innerHTML = formData.employeeId;
+    selectedRow.cells[1].innerHTML = formData.employeeName;
+    selectedRow.cells[2].innerHTML = formData.employeeEmail;
+    selectedRow.cells[3].innerHTML = formData.employeeMobile;
+}
+
+// Delete the record
 function onDelete(td) {
     if (confirm('Do you want to delete this record?')) {
-        row = td.parentElement.parentElement;
-        document.getElementById('storeList').deleteRow(row.rowIndex);
+        var row = td.parentElement.parentElement;
+        document.getElementById('employeeList').deleteRow(row.rowIndex);
         resetForm();
     }
 }
 
-//Reset the data
+// Reset the form data
 function resetForm() {
-    document.getElementById("productCode").value = '';
-    document.getElementById("product").value = '';
-    document.getElementById("qty").value = '';
-    document.getElementById("perPrice").value = '';
+    document.getElementById("employeeId").value = '';
+    document.getElementById("employeeName").value = '';
+    document.getElementById("employeeEmail").value = '';
+    document.getElementById("employeeMobile").value = '';
     selectedRow = null;
 }
-

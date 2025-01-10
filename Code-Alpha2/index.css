@@ -1,73 +1,103 @@
-
-body{
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
     background-image: url('background.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-table{
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 80%;
-    margin: 40px auto;
-    background: rgb(167, 131, 124);
+    max-width: 800px;
 }
 
-table.list{
+h2 {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
     width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
-td{
-    border: 1px solid rgb(200, 204, 204);
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
     text-align: left;
-    padding: 8px 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
-tr:nth-child(even), table.list thread> tr{
-    background-color: rgb(200, 204, 200);
+thead {
+    background-color: #f4f4f4;
 }
 
-input[type="text"],input[type="number"]{
-    width:91%;
-    padding:12px 20px;
-    margin:8px 0;
-    display: inline-block;
-    border: 1px solid rgb(165,161,161);
-    border-radius: 4px;
-}
-
-input[type="submit"],input[type="reset"]{
-    background: #eee;
-    padding:6px 12px;
-    margin:15px 0 10px;
-    display: inline-block;
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 5px 10px;
     border: none;
-    border-radius: 30px;
-    font-size: 1rem;
     cursor: pointer;
-    outline: none;
+    border-radius: 5px;
+    margin: 5px;
 }
 
-input[type="submit"]:hover{
-    background: #4b99d8;
+button:hover {
+    background-color: #e68900;
 }
 
-input[type="reset"]:hover{
-    background: #4b99d8;
-}
-
-button{
-    background: #eee;
-    padding:6px 12px;
-    margin:15px 0 10px;
-    display: inline-block;
-    border: none;
-    border-radius: 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    outline: none;
-}
-
-button:hover{
-    background:#4b99d8 ;
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
 }

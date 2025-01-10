@@ -12,13 +12,14 @@ function Captcha(){
         var f = alpha[Math.floor(Math.random() * alpha.length)];
         var g = alpha[Math.floor(Math.random() * alpha.length)];
                      }
-        var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+        // var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+        var code = a + '' + b + '' + '' + c + '' + d + '' + e + ''+ f + '' + g;
         document.getElementById("mainCaptcha").innerHTML = code
         document.getElementById("mainCaptcha").value = code
       }
 function ValidCaptcha(){
     var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
-    var string2 =         removeSpaces(document.getElementById('txtInput').value);
+    var string2 = removeSpaces(document.getElementById('txtInput').value);
     if (string1 == string2){
            return true;
     }else{        

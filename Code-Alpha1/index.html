@@ -8,8 +8,13 @@
 </head>
 <body>
     <div class="capt"> 
-        <h2 type="text" id="mainCaptcha"></h2><br><br>
-        <p><input type="button" id="refresh" onclick="Captcha();"/></p>            <input type="text" id="txtInput"/>    
+        <h3>Click Below,If You Are Not Robot</h3>
+        <div>
+            <input type="checkbox" id="refresh" onclick="Captcha();" />
+            <label for="refresh">Get New Captcha</label>
+        </div>
+        <h2 type="text" id="mainCaptcha"></h2><br>
+        <input type="text" id="txtInput" placeholder="Enter Captcha" />
         <input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>
         </div>
     <script src="index.js"></script>

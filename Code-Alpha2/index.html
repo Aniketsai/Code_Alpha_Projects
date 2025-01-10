@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration form</title>
+    <title>Employee Management System</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
-    <body>
-        <table>
-            <tr>
-                <td>
-                    <form autocomplete="off" onsubmit="onFormSubmit()">
-                        <div>
-                            <label for="productCode">ProductCode</label>
-                            <input type="text" name="productCode" id="productCode">
-                        </div>
-                        <div>
-                            <label for="product">ProductName</label>
-                            <input type="text" name="product" id="product">
-                        </div>
-                        <div>
-                            <label for="qty">Phone number</label>
-                            <input type="number" name="qty" id="qty">
-                        </div>
-                        <div>
-                            <label for="perPrice">Roll number</label>
-                            <input type="number" name="perPrice" id="perPrice">
-                        </div>
-    
-                        <div class="form_action--button">
-                            <input type="submit" value="Submit">
-                            <input type="reset" value="Reset">
-                        </div>
-                    </form>
-    
-                    <td>
-                        <table class="list" id="storeList">
-                            <thead>
-                                <tr>
-                                    <th>Product Code</th>
-                                    <th>Product Name</th>
-                                    <th>Qty</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-    
-                            </tbody>
-                        </table>
-                    </td>
-                </td>
-            </tr>
-        </table>
-        <script type="text/javascript" src="index.js"></script>
-</body>
+    <div class="container">
+        <h2>Employee Registration Form</h2>
+        <form autocomplete="off" onsubmit="onFormSubmit(event)">
+            <div class="form-group">
+                <label for="employeeId">Employee ID</label>
+                <input type="text" id="employeeId" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeName">Employee Name</label>
+                <input type="text" id="employeeName" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeEmail">Employee Email</label>
+                <input type="email" id="employeeEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="employeeMobile">Employee Mobile</label>
+                <input type="tel" id="employeeMobile" required>
+            </div>
 
+            <div class="form-action-buttons">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        
+        <table class="employee-list" id="employeeList">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Email</th>
+                    <th>Employee Mobile</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
 </html>
